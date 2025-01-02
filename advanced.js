@@ -173,6 +173,11 @@ console.log(nama);
 
 // creation phase
 
+
+// ========================================
+// Contoh 1
+// ========================================
+
 console.log(sayHello());
 
 var nama = 'Rizky';
@@ -190,6 +195,10 @@ function sayHello(){
 // hoisting
 
 
+// ========================================
+// Contoh 2
+// ========================================
+
 var nama = 'Rizky Ramadhan';
 var username = '@rizkyramadhan';
 
@@ -200,6 +209,10 @@ function cetakURL(username){
 
 console.log(cetakURL(japril));
 
+
+// ========================================
+// Contoh 3
+// ========================================
 
 function a(){
     console.log('ini adalah function a');
