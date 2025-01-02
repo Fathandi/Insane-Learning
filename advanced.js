@@ -1,28 +1,37 @@
-//  Episode 1           ==============================================
-
-// 1. Object Literal
-
-let mahasiswa1 = {
-    nama: 'Rizky',
-    energy: 10,
-    makan: function(porsi){ 
-        this.energy += porsi;
-        console.log(`selamat datang  ${this.nama}, selamat makan!`);
-    }
-}
-
-let mahasiswa2 = {
-    nama: 'Japril',
-    energy: 10,
-    makan: function(porsi){
-        this.energy += porsi;
-        console.log(`selamat datang  ${this.nama}, selamat makan!`);
-    }
-}
+// // ========================================
+// // =                                      =
+// // =                Part 1                =
+// // =                                      =
+// // ========================================
 
 
+// // ========================================
+// // 1. Object Literal
+// // ========================================
 
-// 2. Function  Declaration
+// let mahasiswa1 = {
+//     nama: 'Rizky',
+//     energy: 10,
+//     makan: function(porsi){ 
+//         this.energy += porsi;
+//         console.log(`selamat datang  ${this.nama}, selamat makan!`);
+//     }
+// }
+
+// let mahasiswa2 = {
+//     nama: 'Japril',
+//     energy: 10,
+//     makan: function(porsi){
+//         this.energy += porsi;
+//         console.log(`selamat datang  ${this.nama}, selamat makan!`);
+//     }
+// }
+
+
+// // ========================================
+// // 2. Function Declaration
+// // Object.create()
+// // ========================================
 
 // const methodMahasiswa = {
 //     makan : function(porsi){
@@ -52,9 +61,10 @@ let mahasiswa2 = {
 // let Japril = Mahasiswa('Japril', 20);
 
 
-
-// 3. Constructor Function
-// Keyword New
+// // ========================================
+// // 3. Constructor Function
+// // Keyword New
+// // ========================================
 
 // function Mahasiswa(nama, energy){
 //     this.nama = nama;
@@ -76,7 +86,10 @@ let mahasiswa2 = {
 
 
 
-// Prototype
+// // ========================================
+// // 4. Prototype
+// // ========================================
+
 // function Mahasiswa(nama, energy){
 //     this.nama = nama;
 //     this.energy = energy;
@@ -101,7 +114,10 @@ let mahasiswa2 = {
 // let Japril = new Mahasiswa('Japril', 20);
 
 
-// Versi Class
+
+// // ========================================
+// // 5. Prototype Versi Class
+// // ========================================
 
 // class Mahasiswa {
 //     constructor(nama, energy) {
@@ -130,3 +146,67 @@ let mahasiswa2 = {
 // console.log(Rizky.makan(5));
 // console.log(Japril.main(3));
 // console.log(Rizky.tidur(4));
+
+
+
+// // ========================================
+// // =                                      =
+// // =                Part 2                =
+// // =                                      =
+// // ========================================
+
+
+// // ========================================
+// // 1. Execution Context, Hoisting, Scope
+// // ========================================
+
+// var nama = 'Rizky';
+// console.log(nama);
+
+// // creation phase pada global context
+// // nama var = undefined
+// // nama function = fn()
+// // hoisting
+// // window = global object
+// // this = window
+
+
+// // creation phase
+
+// console.log(sayHello());
+
+// var nama = 'Rizky';
+// var umur = 20;
+
+// function sayHello(){
+//     return `halo ${nama} berumur ${umur} tahun`;
+// }
+
+
+// // function membuat execution context
+// // yang di dalamnya terdapat creation phase dan execution phase
+// // window
+// // argumen
+// // hoisting
+
+
+var nama = 'Rizky Ramadhan';
+var username = '@rizkyramadhan';
+
+function cetakURL(username){
+    var url = `https://github.com/`;
+    return url + username;
+}
+
+console.log(cetakURL(japril));
+
+
+// function a(){
+//     console.log('ini adalah function a');
+//     function b(){
+//         console.log('ini adalah function b');
+//         function c(){
+//             console.log('ini adalah function c');
+//         } c();
+//     } b();
+// } a();
