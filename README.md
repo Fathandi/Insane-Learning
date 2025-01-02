@@ -1,2 +1,2 @@
 # Advanced-Javascript
-Resource from Web Programming Unpas
+Resource from Web Programming Unpas, Kelas Terbuka, Dea Afrizal
