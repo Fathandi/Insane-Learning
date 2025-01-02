@@ -207,7 +207,7 @@ function cetakURL(username){
     return url + username;
 }
 
-console.log(cetakURL(japril));
+console.log(cetakURL(`@japril`));
 
 
 // ========================================
@@ -223,3 +223,23 @@ function a(){
         } c();
     } b();
 } a();
+
+
+// ========================================
+// Contoh 4
+// ========================================
+
+function satu(){
+    var nama = 'rizky';
+    console.log(nama);
+}
+
+function dua(){
+    console.log(nama);
+}
+
+console.log(nama);
+var nama = 'japril';
+satu();
+dua('yudi');
+console.log(nama);
