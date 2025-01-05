@@ -243,3 +243,66 @@ var nama = 'japril';
 satu();
 dua('yudi');
 console.log(nama);
+
+
+
+// ========================================
+// =                                      =
+// =                Part 3                =
+// =                                      =
+// ========================================
+
+
+
+// ========================================
+// Contoh 1
+// ========================================
+
+function init(){
+    // let nama = 'Rizky';
+    return function (nama){
+        console.log(nama);
+    }
+}
+let panggilNama = init();
+panggilNama('japril');
+panggilNama('rizky');
+panggilNama('yudi');
+
+
+// ========================================
+// Contoh 2
+// ========================================
+
+function ucapkanSalam(waktu){
+    return function(nama){
+        console.log(`Halo ${nama}, selamat ${waktu}`);
+    }
+}
+let selamatPagi = ucapkanSalam('Pagi');
+let selamatSiang = ucapkanSalam('Siang');
+let selamatMalam = ucapkanSalam('Malam');
+
+selamatPagi('Rizky');
+selamatSiang('Japril');
+selamatMalam('Yudi');
+console.dir(selamatMalam);
+
+
+// ========================================
+// Contoh 3
+// ========================================
+
+let add = (function(){
+    let counter = 0;
+    return function(){
+        return ++counter;
+    } 
+})();
+counter = 100;
+console.log(add());
+console.log(add());
+console.log(add());
+console.log(add());
+console.log(add());
+console.log(add());
