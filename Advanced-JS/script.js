@@ -9,7 +9,7 @@
 // 1. Object Literal
 // ========================================
 
-let mahasiswa1 = {
+let student1 = {
     nama: 'Rizky',
     energy: 10,
     makan: function(porsi){ 
@@ -18,7 +18,7 @@ let mahasiswa1 = {
     }
 }
 
-let mahasiswa2 = {
+let student2 = {
     nama: 'Japril',
     energy: 10,
     makan: function(porsi){
@@ -34,31 +34,29 @@ let mahasiswa2 = {
 // ========================================
 
 const methodMahasiswa = {
-    makan : function(porsi){
+    makan: function(porsi){
         this.energy += porsi;
-        console.log(`halo ${this.nama}, selamat makan`)
+        console.log(`halo ${this.nama}, selamat makan`);
     },
-
-    main : function(jam){
+    main: function(jam){
         this.energy -= jam;
-        console.log(`halo ${this.nama}, selamat bermain`)
+        console.log(`halo ${this.nama}, selamat bermain`);
     },
-
-    tidur : function(jam){
+    tidur: function(jam){
         this.energy += jam * 2;
-        console.log(`halo ${this.nama}, selamat tidur`)
+        console.log(`halo ${this.nama}, selamat tidur`);
     }
 };
-function Mahasiswa(nama, energy){
+
+function Declaration_Mahasiswa(nama, energy){
     let mahasiswa = Object.create(methodMahasiswa);
     mahasiswa.nama = nama;
     mahasiswa.energy = energy;
-
     return mahasiswa;
 }
 
-let Rizky = Mahasiswa('Rizky', 10);
-let Japril = Mahasiswa('Japril', 20);
+let studentRizky = Declaration_Mahasiswa('Rizky', 10);
+let studentJapril = Declaration_Mahasiswa('Japril', 20);
 
 
 // ========================================
@@ -66,86 +64,84 @@ let Japril = Mahasiswa('Japril', 20);
 // Keyword New
 // ========================================
 
-function Mahasiswa(nama, energy){
+function Constructor_Mahasiswa(nama, energy){
     this.nama = nama;
     this.energy = energy;
 
     this.makan = function(porsi){
         this.energy += porsi;
-        console.log(`halo ${this.nama}, selamat makan`)
+        console.log(`halo ${this.nama}, selamat makan`);
     }
 
     this.main = function(jam){
         this.energy -= jam;
-        console.log(`halo ${this.nama}, selamat bermain`)
+        console.log(`halo ${this.nama}, selamat bermain`);
     }
 }
 
-let Rizky = new Mahasiswa('Rizky', 10);
-let Japril = new Mahasiswa('Japril', 20);
-
+let studentRizkyConstructor = new Constructor_Mahasiswa('Rizky', 10);
+let studentJaprilConstructor = new Constructor_Mahasiswa('Japril', 20);
 
 
 // ========================================
 // 4. Prototype
 // ========================================
 
-function Mahasiswa(nama, energy){
+function Prototype_Mahasiswa(nama, energy){
     this.nama = nama;
     this.energy = energy;
 }
 
-Mahasiswa.prototype.makan = function(porsi){
+Prototype_Mahasiswa.prototype.makan = function(porsi){
     this.energy += porsi;
     return `halo ${this.nama}, selamat makan`;
 }
 
-Mahasiswa.prototype.main = function(jam){
+Prototype_Mahasiswa.prototype.main = function(jam){
     this.energy -= jam;
     return `halo ${this.nama}, selamat bermain`;
 }
 
-Mahasiswa.prototype.tidur = function(jam){
+Prototype_Mahasiswa.prototype.tidur = function(jam){
     this.energy += jam * 2;
     return `halo ${this.nama}, selamat tidur`;
 }
 
-let Rizky = new Mahasiswa('Rizky', 10);
-let Japril = new Mahasiswa('Japril', 20);
-
+let studentRizkyPrototype = new Prototype_Mahasiswa('Rizky', 10);
+let studentJaprilPrototype = new Prototype_Mahasiswa('Japril', 20);
 
 
 // ========================================
 // 5. Prototype Versi Class
 // ========================================
 
-class Mahasiswa {
+class ClassPrototype_Mahasiswa {
     constructor(nama, energy) {
         this.nama = nama;
         this.energy = energy;
-        }
+    }
 
     makan(porsi) {
         this.energy += porsi;
         return `halo ${this.nama}, selamat makan`;
-        }
+    }
 
     main(jam) {
         this.energy -= jam;
         return `halo ${this.nama}, selamat bermain`;
-        }
+    }
 
     tidur(jam) {
         this.energy += jam * 2;
         return `halo ${this.nama}, selamat tidur`;
-        }
     }
+}
 
-let Rizky = new Mahasiswa('Rizky', 10);
-let Japril = new Mahasiswa('Japril', 20);
-console.log(Rizky.makan(5));
-console.log(Japril.main(3));
-console.log(Rizky.tidur(4));
+let studentRizkyClass = new ClassPrototype_Mahasiswa('Rizky', 10);
+let studentJaprilClass = new ClassPrototype_Mahasiswa('Japril', 20);
+console.log(studentRizkyClass.makan(4));
+console.log(studentJaprilClass.main(3));
+console.log(studentRizkyClass.tidur(4));
 
 
 
@@ -160,8 +156,8 @@ console.log(Rizky.tidur(4));
 // 1. Execution Context, Hoisting, Scope
 // ========================================
 
-var nama = 'Rizky';
-console.log(nama);
+var studentName = 'Rizky';
+console.log(studentName);
 
 // creation phase pada global context
 // nama var = undefined
@@ -178,13 +174,13 @@ console.log(nama);
 // Contoh 1
 // ========================================
 
-console.log(sayHello());
+console.log(ExecutionContextsayHello());
 
-var nama = 'Rizky';
-var umur = 20;
+var studentName = 'Rizky';
+var age = 20;
 
-function sayHello(){
-    return `halo ${nama} berumur ${umur} tahun`;
+function ExecutionContextsayHello(){
+    return `halo ${studentName} berumur ${age} tahun`;
 }
 
 
@@ -199,12 +195,11 @@ function sayHello(){
 // Contoh 2
 // ========================================
 
-var nama = 'Rizky Ramadhan';
-var username = '@rizkyramadhan';
-
-function cetakURL(username){
+var fullStudentName = 'Rizky Ramadhan';
+var studentUsername = '@rizkyramadhan';
+function cetakURL(studentUsername){
     var url = `https://github.com/`;
-    return url + username;
+    return url + studentUsername;
 }
 
 console.log(cetakURL(`@japril`));
@@ -230,19 +225,19 @@ function a(){
 // ========================================
 
 function satu(){
-    var nama = 'rizky';
-    console.log(nama);
+    var studentName = 'rizky';
+    console.log(studentName);
 }
 
 function dua(){
-    console.log(nama);
+    console.log(studentName);
 }
 
-console.log(nama);
-var nama = 'japril';
+console.log(studentName);
+var studentName = 'japril';
 satu();
 dua('yudi');
-console.log(nama);
+console.log(studentName);
 
 
 
@@ -251,7 +246,6 @@ console.log(nama);
 // =                Part 3                =
 // =                                      =
 // ========================================
-
 
 
 // ========================================
@@ -294,15 +288,72 @@ console.dir(selamatMalam);
 // ========================================
 
 let add = (function(){
-    let counter = 0;
+    let addCounter = 0;
     return function(){
-        return ++counter;
+        return ++addCounter;
     } 
 })();
-counter = 100;
+addCounter = 100; // Tidak mempengaruhi closure
 console.log(add());
 console.log(add());
 console.log(add());
 console.log(add());
 console.log(add());
 console.log(add());
+
+
+
+// ========================================
+// =                                      =
+// =                Part 4                =
+// =                                      =
+// ========================================
+
+
+// Function Expression
+const tampilNama = function(nama, waktu){
+    return `${waktu}, nama saya adalah ${nama}`;
+}
+console.log(tampilNama('Rizky', 'Pagi'));
+
+
+// Arrow Function
+// Contoh 1  satu parameter 
+const tampilNama2 = nama => `nama saya adalah ${nama}`;
+console.log(tampilNama2('Yudi'));
+
+// Contoh 2 dua parameter
+const tampilNama3 = (nama, waktu) => {
+    return `${waktu}, nama saya adalah ${nama}`;
+    }
+console.log(tampilNama3('Japril', 'Siang'));
+
+// Contoh 3 implisit return
+const tampilNama4 = nama => `${nama} adalah nama saya`;
+console.log(tampilNama4('Rizky'));
+
+// Contoh 4 zero parameter & implisit return
+const sayHello = () => `Hello World`;
+console.log(sayHello());
+
+
+// Contoh 5 
+let students = ['Rizky', 'Japril', 'Yudi'];
+
+// Function Normal
+let jumlahHurufNormal = students.map(function(nama){
+    return nama.length;
+});
+console.log(jumlahHurufNormal);
+
+// Function Exression
+let jumlahHurufExpression = students.map(function(nama){
+    return nama.length;
+});
+console.log(jumlahHurufExpression);
+
+// Arrow Function
+let jumlahHurufArrow = students.map(nama => ({
+    nama: nama,
+    jumlah: nama.length}));
+console.table(jumlahHurufArrow);
