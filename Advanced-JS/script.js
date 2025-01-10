@@ -337,14 +337,15 @@ const sayHello = () => `Hello World`;
 console.log(sayHello());
 
 
-// Contoh 5 
+// Contoh 5 Function Map 
 let students = ['Rizky', 'Japril', 'Yudi'];
 
 // Function Normal
-let jumlahHurufNormal = students.map(function(nama){
+function jumlahHurufNormal(nama) {
     return nama.length;
-});
-console.log(jumlahHurufNormal);
+}
+let jumlahHuruf = students.map(jumlahHurufNormal);
+console.log(jumlahHuruf);
 
 // Function Exression
 let jumlahHurufExpression = students.map(function(nama){
@@ -357,3 +358,81 @@ let jumlahHurufArrow = students.map(nama => ({
     nama: nama,
     jumlah: nama.length}));
 console.table(jumlahHurufArrow);
+
+
+
+// ========================================
+// =                                      =
+// =                Part 5                =
+// =                                      =
+// ========================================
+
+
+// This pada Arrow Function
+// Constructor Function
+const constructorPerson = function() {
+    this.nama = 'Japril';
+    this.umur = 33;
+    this.CFhaloBang = function() {
+        return `Hello, nama saya ${this.nama} dan umur saya ${this.umur}`;
+    }
+}
+let JaprilConstructor = new constructorPerson();
+
+
+// Arrow Function
+const arrowPerson = function() {
+    this.nama = 'Rizky';
+    this.umur = '15';
+    this.AFhaloBang = () => {
+        return `Hello, nama saya ${this.nama} dan umur saya ${this.umur}`
+    }
+}
+const RizkyArrow = new arrowPerson();
+
+
+// Object Literal
+const ObLiteralPerson = {
+    nama: 'Japril',
+    umur: 55,
+    // OLhaloBang: () => {
+    //     console.log(this);
+    //     return `Hello, nama saya ${nama} dan umur saya ${umur}`
+    // }
+    OLhaloBang: function() {
+        return `Hello, nama saya ${this.nama} dan umur saya ${this.umur}`
+    }
+}
+
+
+// Constructor Function 2
+const constructorPerson_2 = function() {
+    this.nama = 'Japril';
+    this.umur = 33;
+    this.CFhaloBang_2 = function() {
+        return `Hello, nama saya ${this.nama} dan umur saya ${this.umur}`;
+    }
+    setInterval( () => {
+        console.log(this.umur++);
+    }, 500);
+}
+let JaprilConstructor_2 = new constructorPerson_2();
+
+
+// Arrow Function DOM
+const box = document.querySelector('.box');
+box.addEventListener('click', function(){
+    // let that = this;
+    let satu = 'size';
+    let dua = 'caption';
+
+    if(this.classList.contains(satu)){
+        [satu, dua] = [dua, satu];
+    }
+
+    this.classList.toggle(satu);
+    setTimeout(() => {
+        console.log(this);
+        this.classList.toggle(dua);
+    },600);
+});
