@@ -9,23 +9,27 @@
 // 1. Object Literal
 // ========================================
 
-let student1 = {
+let OL_Student_1 = {
     nama: 'Rizky',
     energy: 10,
     makan: function(porsi){ 
         this.energy += porsi;
+        console.log('Object Literal OL_Student_1');
         console.log(`selamat datang  ${this.nama}, selamat makan!`);
     }
 }
+console.log(OL_Student_1.makan());
 
-let student2 = {
+let OL_Student_2 = {
     nama: 'Japril',
     energy: 10,
     makan: function(porsi){
         this.energy += porsi;
+        console.log('Object Literal OL_Student_2');
         console.log(`selamat datang  ${this.nama}, selamat makan!`);
     }
 }
+console.log(OL_Student_2.makan());
 
 
 // ========================================
@@ -33,7 +37,7 @@ let student2 = {
 // Object.create()
 // ========================================
 
-const methodMahasiswa = {
+const FD_OC_MethodMahasiswa = {
     makan: function(porsi){
         this.energy += porsi;
         console.log(`halo ${this.nama}, selamat makan`);
@@ -49,22 +53,27 @@ const methodMahasiswa = {
 };
 
 function Declaration_Mahasiswa(nama, energy){
-    let mahasiswa = Object.create(methodMahasiswa);
+    let mahasiswa = Object.create(FD_OC_MethodMahasiswa);
     mahasiswa.nama = nama;
     mahasiswa.energy = energy;
     return mahasiswa;
 }
 
-let studentRizky = Declaration_Mahasiswa('Rizky', 10);
-let studentJapril = Declaration_Mahasiswa('Japril', 20);
+let FD_OC_StudentRizky = Declaration_Mahasiswa('Rizky', 10);
+let FD_OC_StudentJapril = Declaration_Mahasiswa('Japril', 20);
+
+// Contoh Pada FD_OC_StudentRizky
+FD_OC_StudentRizky.makan(2);
+// Contoh Pada FD_OC_StudentJapril
+FD_OC_StudentJapril.tidur(2);
 
 
 // ========================================
 // 3. Constructor Function
-// Keyword New
+// Keyword new
 // ========================================
 
-function Constructor_Mahasiswa(nama, energy){
+function CF_new_Mahasiswa(nama, energy){
     this.nama = nama;
     this.energy = energy;
 
@@ -79,8 +88,8 @@ function Constructor_Mahasiswa(nama, energy){
     }
 }
 
-let studentRizkyConstructor = new Constructor_Mahasiswa('Rizky', 10);
-let studentJaprilConstructor = new Constructor_Mahasiswa('Japril', 20);
+let studentRizkyConstructor = new CF_new_Mahasiswa('Rizky', 10);
+let studentJaprilConstructor = new CF_new_Mahasiswa('Japril', 20);
 
 
 // ========================================
@@ -354,6 +363,8 @@ let jumlahHurufExpression = students.map(function(nama){
 console.log(jumlahHurufExpression);
 
 // Arrow Function
+// let jumlahHurufArrow = students.map(nama => nama.length);
+// console.log(jumlahHurufArrow);
 let jumlahHurufArrow = students.map(nama => ({
     nama: nama,
     jumlah: nama.length}));
@@ -414,7 +425,7 @@ const constructorPerson_2 = function() {
     }
     setInterval( () => {
         console.log(this.umur++);
-    }, 500);
+    }, 99999);
 }
 let JaprilConstructor_2 = new constructorPerson_2();
 
@@ -434,5 +445,78 @@ box.addEventListener('click', function(){
     setTimeout(() => {
         console.log(this);
         this.classList.toggle(dua);
-    },600);
+    },6000);
 });
+
+
+
+// ========================================
+// =                                      =
+// =                Part 6                =
+// =                                      =
+// ========================================
+
+
+
+// Higher Order Function
+// Contoh 1
+function kerjakanTugas(mataPelajaran, selesai){
+    console.log(`Saya sedang mengerjakan tugas ${mataPelajaran} ...`);
+    selesai(mataPelajaran);
+}
+
+function selesai(mataPelajaran){
+    console.log(`Saya sudah selesai mengerjakan tugas ${mataPelajaran}`);
+}
+
+kerjakanTugas('Matematika', selesai);
+kerjakanTugas('Bahasa Indonesia', selesai);
+kerjakanTugas('Bahasa Inggris', selesai);
+kerjakanTugas('Fisika', selesai);
+
+
+// Contoh 2
+function ucapkanSelamat(HOFwaktu){
+    return function (HOFnama){
+        console.log(`Selamat ${HOFwaktu} ${HOFnama}!`);
+    }
+}
+
+let selamatTahunBaru = ucapkanSelamat('Selamat Tahun Baru 2025');
+console.dir(selamatTahunBaru('Yudi'));
+
+
+// Contoh 3
+let HOFtotal = 0, count = 1;
+while (count <= 10){
+    HOFtotal += count;
+    count++;
+}
+console.log(`Total ${count} = ${HOFtotal}`);
+
+// Alternatif Contoh 3
+// console.log(sum(range(1, 10)));
+
+
+// Contoh 4
+for (let i = 0; i < 3; i++){
+    console.log(i);
+}
+
+// Alternatif Contoh 4
+function repeatLog(n){
+    for (let i = 0; i < n; i++){
+        console.log(i);
+    }
+}
+repeatLog(3);
+
+
+// Implementasi Contoh 4 Action
+function repeat(j, action){
+    for (let i = 0; i < j; i++){
+        action(i);
+    }
+}
+repeat(10, console.log);
+repeat(3, alert);
