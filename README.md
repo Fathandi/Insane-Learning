@@ -1,3 +1,3 @@
 # JavaScript Fundamentals
 
-This repository contains examples and explanations of fundamental JavaScript concepts, including object literals, function declarations, constructor functions, prototypes, execution context, hoisting, scope, closures, and arrow functions.
+Repository ini berisi contoh dan penjelasan tentang konsep dasar JavaScript, termasuk object literal, deklarasi fungsi, fungsi konstruktor, prototype, konteks eksekusi, hoisting, scope, closure, dan fungsi panah.
