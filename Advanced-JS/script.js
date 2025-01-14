@@ -18,7 +18,7 @@ let OL_Student_1 = {
         console.log(`selamat datang  ${this.nama}, selamat makan!`);
     }
 }
-console.log(OL_Student_1.makan());
+
 
 let OL_Student_2 = {
     nama: 'Japril',
@@ -29,7 +29,9 @@ let OL_Student_2 = {
         console.log(`selamat datang  ${this.nama}, selamat makan!`);
     }
 }
+
 console.log(OL_Student_2.makan());
+console.log(OL_Student_1.makan());
 
 
 // ========================================
