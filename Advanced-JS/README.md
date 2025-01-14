@@ -1,26 +1,23 @@
 # JavaScript Fundamentals
 
-This repository contains examples and explanations of fundamental JavaScript concepts, including object literals, function declarations, constructor functions, prototypes, execution context, hoisting, scope, closures, and arrow functions.
+Repository ini berisi contoh dan penjelasan tentang konsep dasar JavaScript, termasuk object literal, deklarasi fungsi, fungsi konstruktor, prototype, konteks eksekusi, hoisting, scope, closure, dan fungsi panah.
 
 ## **Part 1: Object-Oriented Programming in JavaScript**
 
 ### **1. Object Literal**
-- Objects are created using the object literal syntax.
-- Example:
+- Objek dibuat menggunakan sintaks object literal.
+- Contoh:
   ```javascript
   let student1 = {
       nama: 'Rizky',
       energy: 10,
-      makan: function(porsi){ 
-          this.energy += porsi;
-          console.log(`selamat datang  ${this.nama}, selamat makan!`);
-      }
+      makan: function(porsi){ /* ... */ }
   }
   ```
 
 ### **2. Function Declaration with `Object.create()`**
-- Objects are created using a function declaration and `Object.create()` to inherit methods.
-- Example:
+- Objek dibuat menggunakan deklarasi fungsi dan `Object.create()` untuk mewarisi metode.
+- Contoh:
   ```javascript
   const methodMahasiswa = {
       makan: function(porsi){ /* ... */ },
@@ -37,8 +34,8 @@ This repository contains examples and explanations of fundamental JavaScript con
   ```
 
 ### **3. Constructor Function**
-- Objects are created using the `new` keyword with a constructor function.
-- Example:
+- Objek dibuat menggunakan kata kunci `new` dengan fungsi konstruktor.
+- Contoh:
   ```javascript
   function Constructor_Mahasiswa(nama, energy){
       this.nama = nama;
@@ -49,8 +46,8 @@ This repository contains examples and explanations of fundamental JavaScript con
   ```
 
 ### **4. Prototype**
-- Methods are added to the prototype of a constructor function.
-- Example:
+- Metode ditambahkan ke prototype fungsi konstruktor.
+- Contoh:
   ```javascript
   function Prototype_Mahasiswa(nama, energy){
       this.nama = nama;
@@ -62,8 +59,8 @@ This repository contains examples and explanations of fundamental JavaScript con
   ```
 
 ### **5. Prototype with Class Syntax**
-- ES6 class syntax is used to define a class with methods.
-- Example:
+- Sintaks kelas ES6 digunakan untuk mendefinisikan kelas dengan metode.
+- Contoh:
   ```javascript
   class ClassPrototype_Mahasiswa {
       constructor(nama, energy) {
@@ -82,24 +79,24 @@ This repository contains examples and explanations of fundamental JavaScript con
 ## **Part 2: Execution Context, Hoisting, and Scope**
 
 ### **1. Execution Context**
-- JavaScript code is executed in two phases: **creation phase** and **execution phase**.
-- Example:
+- Kode JavaScript dijalankan dalam dua fase: **fase pembuatan** dan **fase eksekusi**.
+- Contoh:
   ```javascript
   var studentName = 'Rizky';
   console.log(studentName);
   ```
 
 ### **2. Hoisting**
-- Variables and functions are hoisted to the top of their scope.
-- Example:
+- Variabel dan fungsi diangkat ke atas scope.
+- Contoh:
   ```javascript
   console.log(ExecutionContextsayHello());
   function ExecutionContextsayHello(){ /* ... */ }
   ```
 
 ### **3. Scope**
-- Variables have function scope or block scope depending on how they are declared.
-- Example:
+- Variabel memiliki scope fungsi atau scope blok tergantung pada cara deklarasi.
+- Contoh:
   ```javascript
   function satu(){
       var studentName = 'rizky';
@@ -112,11 +109,11 @@ This repository contains examples and explanations of fundamental JavaScript con
 
 ---
 
-## **Part 3: Closures**
+## **Part 3: Closure**
 
 ### **1. Basic Closure**
-- A function inside another function that retains access to the outer function's variables.
-- Example:
+- Fungsi di dalam fungsi lain yang mempertahankan akses ke variabel fungsi luar.
+- Contoh:
   ```javascript
   function init(){
       return function (nama){
@@ -127,8 +124,8 @@ This repository contains examples and explanations of fundamental JavaScript con
   panggilNama('japril');
   ```
 
-### **2. Closure with Parameters**
-- Example:
+### **2. Closure dengan Parameter**
+- Contoh:
   ```javascript
   function ucapkanSalam(waktu){
       return function(nama){
@@ -139,8 +136,8 @@ This repository contains examples and explanations of fundamental JavaScript con
   selamatPagi('Rizky');
   ```
 
-### **3. Closure with Counter**
-- Example:
+### **3. Closure dengan Penghitung**
+- Contoh:
   ```javascript
   let add = (function(){
       let addCounter = 0;
@@ -156,46 +153,53 @@ This repository contains examples and explanations of fundamental JavaScript con
 ## **Part 4: Arrow Functions**
 
 ### **1. Basic Arrow Function**
-- Example:
+- Contoh:
   ```javascript
-  const tampilNama2 = nama => `nama saya adalah ${nama}`;
+  const tampilNama ```javascript
+  = nama => `nama saya adalah ${nama}`;
+  console.log(tampilNama('Yudi'));
   ```
 
-### **2. Arrow Function with Multiple Parameters**
-- Example:
+### **2. Arrow Function dengan Beberapa Parameter**
+- Contoh:
   ```javascript
   const tampilNama3 = (nama, waktu) => {
-      return `${waktu}, nama saya adalah ${nama}` };
+      return `${waktu}, nama saya adalah ${nama}`;
+  }
+  console.log(tampilNama3('Japril', 'Siang'));
   ```
 
 ### **3. Implicit Return**
-- Example:
+- Contoh:
   ```javascript
   const tampilNama4 = nama => `${nama} adalah nama saya`;
+  console.log(tampilNama4('Rizky'));
   ```
 
-### **4. Arrow Function with No Parameters**
-- Example:
+### **4. Arrow Function Tanpa Parameter**
+- Contoh:
   ```javascript
   const sayHello = () => `Hello World`;
+  console.log(sayHello());
   ```
 
-### **5. Using Arrow Functions with `map`**
-- Example:
+### **5. Menggunakan Arrow Function dengan `map`**
+- Contoh:
   ```javascript
   let students = ['Rizky', 'Japril', 'Yudi'];
   let jumlahHurufArrow = students.map(nama => ({
       nama: nama,
       jumlah: nama.length
   }));
+  console.table(jumlahHurufArrow);
   ```
 
 ---
 
-## **Part 5: `this` Keyword in JavaScript**
+## **Part 5: The `this` Keyword in JavaScript**
 
-### **1. `this` in Constructor Functions**
-- Example:
+### **1. `this` dalam Fungsi Konstruktor**
+- Contoh:
   ```javascript
   const constructorPerson = function() {
       this.nama = 'Japril';
@@ -204,10 +208,11 @@ This repository contains examples and explanations of fundamental JavaScript con
           return `Hello, nama saya ${this.nama} dan umur saya ${this.umur}`;
       }
   }
+  let JaprilConstructor = new constructorPerson();
   ```
 
-### **2. `this` in Arrow Functions**
-- Example:
+### **2. `this` dalam Arrow Function**
+- Contoh:
   ```javascript
   const arrowPerson = function() {
       this.nama = 'Rizky';
@@ -216,10 +221,11 @@ This repository contains examples and explanations of fundamental JavaScript con
           return `Hello, nama saya ${this.nama} dan umur saya ${this.umur}`;
       }
   }
+  const RizkyArrow = new arrowPerson();
   ```
 
-### **3. `this` in Object Literals**
-- Example:
+### **3. `this` dalam Literal Objek**
+- Contoh:
   ```javascript
   const ObLiteralPerson = {
       nama: 'Japril',
@@ -230,20 +236,24 @@ This repository contains examples and explanations of fundamental JavaScript con
   }
   ```
 
-### **4. `this` in SetInterval with Arrow Function**
-- Example:
+### **4. `this` dalam SetInterval dengan Arrow Function**
+- Contoh:
   ```javascript
   const constructorPerson_2 = function() {
       this.nama = 'Japril';
       this.umur = 33;
+      this.CFhaloBang_2 = function() {
+          return `Hello, nama saya ${this.nama} dan umur saya ${this.umur}`;
+      }
       setInterval(() => {
           console.log(this.umur++);
-      }, 500);
+      }, 99999);
   }
+  let JaprilConstructor_2 = new constructorPerson_2();
   ```
 
-### **5. `this` in Event Listeners**
-- Example:
+### **5. `this` dalam Event Listeners**
+- Contoh:
   ```javascript
   const box = document.querySelector('.box');
   box.addEventListener('click', function(){
@@ -254,6 +264,7 @@ This repository contains examples and explanations of fundamental JavaScript con
       }
       this.classList.toggle(satu);
       setTimeout(() => {
+          console.log(this);
           this.classList.toggle(dua);
       }, 6000);
   });
@@ -261,6 +272,67 @@ This repository contains examples and explanations of fundamental JavaScript con
 
 ---
 
-## **Conclusion**
+## **Part 6: Higher Order Functions**
 
-This repository serves as a comprehensive guide to understanding JavaScript fundamentals, focusing on object-oriented programming, execution context, closures, arrow functions, and the `this` keyword. Each section provides examples to illustrate the concepts effectively.
+### **1. Contoh Higher Order Function**
+- Contoh:
+  ```javascript
+  function kerjakanTugas(mataPelajaran, selesai){
+      console.log(`Saya sedang mengerjakan tugas ${mataPelajaran} ...`);
+      selesai(mataPelajaran);
+  }
+
+  function selesai(mataPelajaran){
+      console.log(`Saya sudah selesai mengerjakan tugas ${mataPelajaran}`);
+  }
+
+  kerjakanTugas('Matematika', selesai);
+  ```
+
+### **2. Higher Order Function dengan Closure**
+- Contoh:
+  ```javascript
+  function ucapkanSelamat(HOFwaktu){
+      return function (HOFnama){
+          console.log(`Selamat ${HOFwaktu} ${HOFnama}!`);
+      }
+  }
+  let selamatTahunBaru = ucapkanSelamat('Selamat Tahun Baru 2025');
+  selamatTahunBaru('Yudi');
+  ```
+
+### **3. Menghitung Total dengan Loop**
+- Contoh:
+  ```javascript
+  let HOFtotal = 0, count = 1;
+  while (count <= 10){
+      HOFtotal += count;
+      count++;
+  }
+  console.log(`Total ${count} = ${HOFtotal}`);
+  ```
+
+### **4. Menggunakan Fungsi untuk Mengulang Log**
+- Contoh:
+  ```javascript
+  function repeatLog(n){
+      for (let i = 0; i < n; i++){
+          console.log(i);
+      }
+  }
+  repeatLog(3);
+  ```
+
+### **5. Implementasi Contoh 4 Action**
+- Contoh:
+  ```javascript
+  function repeat(j, action){
+      for (let i = 0; i < j; i++){
+          action(i);
+      }
+  }
+  repeat(10, console.log);
+  repeat(3, alert);
+  ```
+
+---
