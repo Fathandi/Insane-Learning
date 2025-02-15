@@ -1,0 +1,23 @@
+[
+  {
+    "nama": "Ardy Wirasaputra",
+    "NIM": "181011450168",
+    "email": "ardywirasaputra@gmail.com",
+    "jurusan": "Teknik Informatika",
+    "idDosenWali": 1
+  },
+  {
+    "nama": "Cici Awalia",
+    "NIM": "181011450123",
+    "email": "ciciawalia@gmail.com",
+    "jurusan": "Teknik Industri",
+    "idDosenWali": 2
+  },
+  {
+    "nama": "Zahra Devita",
+    "NIM": "181011450321",
+    "email": "zahradevita@gmail.com",
+    "jurusan": "Teknik Mesin",
+    "idDosenWali": 3
+  }
+]
