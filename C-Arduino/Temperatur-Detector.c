@@ -70,3 +70,8 @@ void loop() {
   } else {
     Serial.println("Gagal mengirim data ke ThingSpeak!");
   }
+  
+  // Menunggu 15 detik sebelum pembacaan berikutnya
+  // ThingSpeak membutuhkan minimal 15 detik antara update
+  delay(15000);
+}
