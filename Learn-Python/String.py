@@ -1,4 +1,4 @@
-class StringManipulator:
+class StrinManipulator:
     def __init__(self, text):
         """
         Inisialisasi kelas dengan teks yang akan dimanipulasi
