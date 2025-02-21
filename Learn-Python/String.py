@@ -9,11 +9,11 @@ class StringManipulator:
         """
         Menghitung frekuensi setiap kata dalam teks
         """
-        # Membersihkan teks dari tanda baca
+        
         cleaned_text = ''.join(char.lower() for char in self.text if char.isalnum() or char.isspace())
         words = cleaned_text.split()
         
-        # Menghitung frekuensi menggunakan dictionary comprehension
+        
         return {word: words.count(word) for word in set(words)}
     
     def find_palindromes(self):
@@ -91,7 +91,7 @@ class StringManipulator:
             'char_frequency': {char: chars.count(char) for char in set(chars)}
         }
 
-# Contoh penggunaan
+
 if __name__ == "__main__":
     sample_text = """
     Halo! Ini adalah contoh teks yang akan kita manipulasi.
