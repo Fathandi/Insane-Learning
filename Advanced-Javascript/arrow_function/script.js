@@ -33,7 +33,7 @@
 //? jika hanya 1 baris blok kode bisa gunakan implisit return
 // const sayHello = name => console.log(`Hello ${name}`);
 
-// sayHello('Ardy');
+// sayHello('Fathandi');
 
 
 
