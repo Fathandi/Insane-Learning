@@ -5,14 +5,14 @@ Repository ini berisi contoh dan penjelasan tentang konsep dasar JavaScript, ter
 
 # Exercise-C++
 
-Repository ini berisi latihan menggunakan bahasa C++
+Repository ini berisi latihan sederhana menggunakan bahasa C++
 
 
 # C-Arduino (.ino)
 
-Repository ini berisi source code dari program-program IoT menggunakan Arduino
+Repository ini berisi source code dari program-program IoT menggunakan modul Arduino
 
 
 # Learn-Python
 
-Repository ini berisi program sederhana menggunakan bahasa python
+Repository ini berisi program sederhana menggunakan bahasa python dan source code program IoT menggunakan bahasa python
