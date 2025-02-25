@@ -1,22 +1,22 @@
 [
   {
-    "nama": "Ardy Wirasaputra",
+    "nama": "Fathih",
     "NIM": "181011450168",
-    "email": "ardywirasaputra@gmail.com",
+    "email": "fathih@gmail.com",
     "jurusan": "Teknik Informatika",
     "idDosenWali": 1
   },
   {
-    "nama": "Cici Awalia",
+    "nama": "Apriandi",
     "NIM": "181011450123",
-    "email": "ciciawalia@gmail.com",
+    "email": "apriandi@gmail.com",
     "jurusan": "Teknik Industri",
     "idDosenWali": 2
   },
   {
-    "nama": "Zahra Devita",
+    "nama": "Adit",
     "NIM": "181011450321",
-    "email": "zahradevita@gmail.com",
+    "email": "adit@gmail.com",
     "jurusan": "Teknik Mesin",
     "idDosenWali": 3
   }
